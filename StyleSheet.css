@@ -1,26 +1,26 @@
-﻿body {background-color:lightcoral ; color:black
+﻿body {background-color:#2EA197 ; color:#34414A
 }
 
 /* Custom classes - START */
 /* MWC */
 
 .bold{font-weight:bold; font-size:24px}
-
+.errorMessage {font-style:italic; color:#D14A41; font-weight:bold}
 /* Custom classes - END */
 
 
 /*CSS to format the gridview -- START*/
-.cssgridview {width:auto;margin:5px 0 10px 0; border:solid 1px #525252; border-collapse:collapse; text-align:center; font-family: "Comic Sans MS";
+.cssgridview {width:auto;margin:5px 0 10px 0; border:solid 1px #34414A; border-collapse:collapse; text-align:center; font-family: "Comic Sans MS";
 }
-.cssgridview td {padding:10px; border:solid 1px#c1c1c1; color:#717171;
+.cssgridview td {padding:10px; border:solid 1px#7D4F7D; color:#7D4F7D;
 
 }
 .cssgridview th {
         padding: 10px;
         color: #fff;
         background: #424242 url(./style/grd_head.png) repeat-x top;
-        border-left: solid 1px #525252;
+        border-left: solid 1px #7D4F7D;
         font-size: 0.9em;
     }
-.cssgridview .alt{background-color:aqua;}
+.cssgridview .alt{background-color:#D19C49;}
 /* CSS to format the gridview --END*/

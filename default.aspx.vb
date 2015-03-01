@@ -5,6 +5,7 @@ Partial Class _Default
     Inherits System.Web.UI.Page
     'Adapted from the loan calculator found at www.dreamincode.net/forums/topic/237228-looping-issues-using-a-grid-for-mortgage-calculator-amortization/
     Protected Sub btnCalcPmt_Click(sender As Object, e As EventArgs) Handles btnCalcPmt.Click
+        loanGridView.Visible = True
         Dim loanAmount As Double
         Dim annualRate As Double
         Dim interestRate As Double
@@ -81,7 +82,7 @@ Partial Class _Default
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
             tRow("New Balance") = String.Format("{0:C}", nBalance)
-=====
+
             loanAmortTbl.Rows.Add(tRow)
 
             'Loops to next counterStart (Continues loop until counterStart requirements are met (loanTerm)).
@@ -94,4 +95,12 @@ Partial Class _Default
 
     End Sub
 
+    Protected Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        tbLoanAmt.Text = ""
+        tbAnnualInterest.Text = ""
+        tbLoanTerm.Text = ""
+        lblMonthlyPmt.Text = ""
+        loanGridView.Visible = False
+
+    End Sub
 End Class

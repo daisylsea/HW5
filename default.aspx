@@ -3,46 +3,74 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-<<<<<<< HEAD
+
     <title>Mortgage Calculator</title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-=======
-<<<<<<< HEAD
-    <title>Mortgage Calculator</title>
-    <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-=======
-    <title></title>
->>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
->>>>>>> 9db38d895399637d07c6778c92383808973f49d1
+
 
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-    Mike's Mortgage Calculator
+    Xi's Mortgage Calculator
         
         <br /><br />
      
         Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" ></asp:TextBox>
                   
+        &nbsp;&nbsp;(Enter numbers only)&nbsp;&nbsp;
+        <span class="errorMessage">
+        <asp:RequiredFieldValidator ID="rfv_loan" runat="server" 
+            ControlToValidate="tbLoanAmt"
+            ErrorMessage="**Please enter the loan amount.**">
+        </asp:RequiredFieldValidator>
+        
+
+            </span>
         <br /><br />      
         
         Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
         
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="errorMessage">
+        <asp:RequiredFieldValidator ID="rfv_int" runat="server" 
+            ControlToValidate="tbAnnualInterest"
+            ErrorMessage="**Please enter the annual interest.**">
+        </asp:RequiredFieldValidator>
+        <br />
+        
+        <asp:RegularExpressionValidator ID="rev_int" runat="server" 
+            ControlToValidate="tbAnnualInterest"
+            ErrorMessage="*Please enter numbers only, enter 10 for 10%*"
+            ValidationExpression="^[0-9 ]*$">
+        </asp:RegularExpressionValidator>
+        </span>
         <br /><br />
 
         Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
         
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="errorMessage">
+        <asp:RequiredFieldValidator ID="rfv_term" runat="server" 
+            ControlToValidate="tbLoanTerm"
+            ErrorMessage="**Please enter the loan term in year.**">
+        </asp:RequiredFieldValidator>
+        <br />
+        
+        <asp:RegularExpressionValidator ID="rev_term" runat="server" 
+            ControlToValidate="tbLoanTerm"
+            ErrorMessage="*Please enter numbers only.*"
+            ValidationExpression="^[0-9 ]*$">
+        </asp:RegularExpressionValidator>
+        </span>
         <br /><br />
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
         
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9db38d895399637d07c6778c92383808973f49d1
+
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnClear" runat="server" Text="Clear" />
         
@@ -54,7 +82,7 @@
         <p>Welcome to my mortagege calculator. Please complete the fields above to have your    
             monthly payment and loan repayment schedule calculated for you.
         </p>
-       <%Else%>         
+        <%Else%>         
         <!-- Then the page is in postback so show the monthly payment and payment schedule. -->
             <br />
 
@@ -66,19 +94,9 @@
             <AlternatingRowStyle CssClass="alt" />
         </asp:GridView>
         <%End If%>
-<<<<<<< HEAD
-=======
-=======
-        <br /><br />
-                
-        Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
-        
-        <br /><br />
-        
-        <asp:GridView ID="loanGridView" runat="server" />
-            
->>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
->>>>>>> 9db38d895399637d07c6778c92383808973f49d1
+
+      
+
         </div>
     </form>
 </body>
