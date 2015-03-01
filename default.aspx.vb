@@ -16,7 +16,10 @@ Partial Class _Default
         Dim interestPaid As Double
         Dim nBalance As Double
         Dim principal As Double
+<<<<<<< HEAD
         Dim pmtDate As DateTime
+=======
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
 
         'Declaring a table to hold the payment information.
         Dim table As DataTable = New DataTable("ParentTable")
@@ -47,6 +50,7 @@ Partial Class _Default
         lblMonthlyPmt.Text = FormatCurrency(monthlyPayment)
 
 
+<<<<<<< HEAD
 
         'Adds items to list box, formats them for currency and adds pad spacing for each item.
         loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
@@ -54,6 +58,12 @@ Partial Class _Default
         loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("New Balance", System.Type.GetType("System.String"))
+=======
+        'Adds items to list box, formats them for currency and adds pad spacing for each item.
+        loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
 
 
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
@@ -67,6 +77,7 @@ Partial Class _Default
             nBalance = loanAmount - principal
             loanAmount = nBalance
 
+<<<<<<< HEAD
 
 
 
@@ -77,6 +88,13 @@ Partial Class _Default
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
             tRow("New Balance") = String.Format("{0:C}", nBalance)
+=======
+            'Writes the data to a new row in the gridview.
+            tRow = loanAmortTbl.NewRow()
+            tRow("Payment Number") = String.Format(counterStart)
+            tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
+            tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
             loanAmortTbl.Rows.Add(tRow)
 
             'Loops to next counterStart (Continues loop until counterStart requirements are met (loanTerm)).
