@@ -16,7 +16,14 @@ Partial Class _Default
         Dim interestPaid As Double
         Dim nBalance As Double
         Dim principal As Double
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+        Dim pmtDate As DateTime
+=======
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
 
         'Declaring a table to hold the payment information.
         Dim table As DataTable = New DataTable("ParentTable")
@@ -47,6 +54,10 @@ Partial Class _Default
         lblMonthlyPmt.Text = FormatCurrency(monthlyPayment)
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
 
         'Adds items to list box, formats them for currency and adds pad spacing for each item.
         loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
@@ -54,11 +65,24 @@ Partial Class _Default
         loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("New Balance", System.Type.GetType("System.String"))
+<<<<<<< HEAD
+=======
+=======
+        'Adds items to list box, formats them for currency and adds pad spacing for each item.
+        loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
 
 
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
         Dim counterStart As Integer
+<<<<<<< HEAD
         Dim pmtDate As DateTime
+=======
+
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
         For counterStart = 1 To loanTerm
 
             'Performs calculations for amortization of loan.
@@ -66,18 +90,37 @@ Partial Class _Default
             principal = monthlyPayment - interestPaid
             nBalance = loanAmount - principal
             loanAmount = nBalance
+<<<<<<< HEAD
             pmtDate = DateTime.Now.AddMonths(counterStart)
 
+=======
+
+<<<<<<< HEAD
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
 
 
 
             'Writes the data to a new row in the gridview.
             tRow = loanAmortTbl.NewRow()
             tRow("Payment Number") = String.Format(counterStart)
+<<<<<<< HEAD
             tRow("Payment Date") = pmtDate.ToString("MM/dd/yyyy")
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
             tRow("New Balance") = String.Format("{0:C}", nBalance)
+=======
+            tRow("Payment Date") = DateTime.Now.ToString("MM/dd/yyyy")
+            tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
+            tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
+            tRow("New Balance") = String.Format("{0:C}", nBalance)
+=======
+            'Writes the data to a new row in the gridview.
+            tRow = loanAmortTbl.NewRow()
+            tRow("Payment Number") = String.Format(counterStart)
+            tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
+            tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
             loanAmortTbl.Rows.Add(tRow)
 
             'Loops to next counterStart (Continues loop until counterStart requirements are met (loanTerm)).

@@ -4,8 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<<<<<<< HEAD
     <title>Mortgage Calculator</title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+=======
+<<<<<<< HEAD
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+=======
+    <title></title>
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
 
 </head>
 <body>
@@ -30,6 +39,10 @@
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
         
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnClear" runat="server" Text="Clear" />
         
@@ -53,6 +66,19 @@
             <AlternatingRowStyle CssClass="alt" />
         </asp:GridView>
         <%End If%>
+<<<<<<< HEAD
+=======
+=======
+        <br /><br />
+                
+        Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
+        
+        <br /><br />
+        
+        <asp:GridView ID="loanGridView" runat="server" />
+            
+>>>>>>> 89a3840121ea1984fac64affab037c4e767a9fd6
+>>>>>>> 9db38d895399637d07c6778c92383808973f49d1
         </div>
     </form>
 </body>
